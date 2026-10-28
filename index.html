@@ -69,18 +69,24 @@
     hostURL: "https://eu-west-2.dl.watson-orchestrate.ibm.com",
     rootElementID: "root",
     chatOptions: {
-        agentId: "8a8efbb7-3df8-4ea6-a2e4-6fa3483f62b0", 
-        agentEnvironmentId: "b50d1f5c-9e90-41d9-a6b3-207b4300ad0b",
+      agentId: "8a8efbb7-3df8-4ea6-a2e4-6fa3483f62b0",
+      embedUserId: "849d275d-89b6-421b-94a4-1b9ca76f5198_20261016-1055-0243-70ae-d7cebca3cce8_20261016-1056-1215-10a0-6430f655e3cb",
+      sessionId: "65b12383-7829-4f3b-8153-d26917bc18a3"
     }
   };
+
+  window.addEventListener('authTokenNeeded', function(event) {
+    event.detail.authToken = "65b12383-7829-4f3b-8153-d26917bc18a3";
+  });
+
   setTimeout(function () {
     const script = document.createElement('script');
-    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=t`;
     script.addEventListener('load', function () {
-        wxoLoader.init();
+      wxoLoader.init();
     });
     document.head.appendChild(script);
-  }, 0);                     
+  }, 0);
 </script>
 
 </body>
