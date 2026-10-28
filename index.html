@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Hospital Dubai - AI Agent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f8;
+        }
+        .header {
+            background: #003366;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .content {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .content h2 {
+            color: #003366;
+        }
+        .chat-note {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div>
+        <h1>🏥 American Hospital Dubai</h1>
+        <p>AI Patient Services Agent</p>
+    </div>
+</div>
+
+<div class="content">
+    <h2>Welcome to AHD Patient Services</h2>
+    <div class="chat-note">
+        💬 Click the chat bubble at the 
+        bottom right to speak with our 
+        AI agent
+    </div>
+</div>
+
+<script>
+  window.wxOConfiguration = {
+    orchestrationID: "20261016-1055-0243-70ae-d7cebca3cce8_20261016-1056-1215-10a0-6430f655e3cb",
+    hostURL: "https://eu-west-2.dl.watson-orchestrate.ibm.com",
+    rootElementID: "root",
+    chatOptions: {
+        agentId: "8a8efbb7-3df8-4ea6-a2e4-6fa3483f62b0", 
+        agentEnvironmentId: "b50d1f5c-9e90-41d9-a6b3-207b4300ad0b",
+    }
+  };
+  setTimeout(function () {
+    const script = document.createElement('script');
+    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+    script.addEventListener('load', function () {
+        wxoLoader.init();
+    });
+    document.head.appendChild(script);
+  }, 0);                     
+</script>
+
+</body>
+</html>
